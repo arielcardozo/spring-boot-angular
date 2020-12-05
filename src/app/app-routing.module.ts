@@ -1,6 +1,5 @@
-import {RouterModule} from '@angular/router';
 import { NgModule } from '@angular/core';
-import { Routes, Router } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { TutorialsListComponent } from './components/tutorials-list/tutorials-list.component';
 import { TutorialDetailsComponent } from './components/tutorial-details/tutorial-details.component';
 import { AddTutorialComponent } from './components/add-tutorial/add-tutorial.component';

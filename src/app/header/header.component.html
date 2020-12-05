@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
+        <span class="icon-bar" ></span>
+      </button>
+      <a routerLink="/" class="navbar-brand">CRUD Angular</a>
+    </div>
+    <div class="navbar-collapse" [class.collapse]="collapsed" >
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active"><a routerLink="tutorials" class="nav-link">Tutorials</a></li>
+        <li routerLinkActive="active"><a routerLink="add" class="nav-link">Add</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown" appDropDown>
+          <a style="cursor: pointer" class="dropdown-toggle" role="button">Options Manage <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a style="cursor: pointer">Saving data</a></li>
+            <li><a style="cursor: pointer">Fetching data</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
