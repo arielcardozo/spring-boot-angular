@@ -11,6 +11,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {AgGridModule} from 'ag-grid-angular';
 import {EmployeeDetailsComponent} from './components/employee-details/employee-details.component';
+import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 // import 'ag-grid-enterprise';
 
 @NgModule({
@@ -20,7 +21,8 @@ import {EmployeeDetailsComponent} from './components/employee-details/employee-d
     TutorialDetailsComponent,
     TutorialsListComponent,
     HeaderComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    EmployeeListComponent
   ],
   imports: [
     BrowserModule,
