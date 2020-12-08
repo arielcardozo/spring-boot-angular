@@ -9,6 +9,9 @@ import { TutorialsListComponent } from './components/tutorials-list/tutorials-li
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
+import {AgGridModule} from 'ag-grid-angular';
+import {EmployeeDetailsComponent} from './components/employee-details/employee-details.component';
+// import 'ag-grid-enterprise';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,14 @@ import {AppRoutingModule} from './app-routing.module';
     TutorialDetailsComponent,
     TutorialsListComponent,
     HeaderComponent,
+    EmployeeDetailsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgGridModule.withComponents([])
 
   ],
   providers: [],
