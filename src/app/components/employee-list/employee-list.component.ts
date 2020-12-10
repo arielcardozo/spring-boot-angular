@@ -21,7 +21,7 @@ export class EmployeeListComponent implements OnInit {
     { field: 'name', sortable: true, filter: true, checkboxSelection: true },
     { field: 'age', sortable: true, filter: true },
     { field: 'DOB' },
-    { field: 'position' },
+    { field: 'position.name' },
     { field: 'sex' }
   ];
 

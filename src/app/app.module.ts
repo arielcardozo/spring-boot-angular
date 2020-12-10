@@ -7,11 +7,15 @@ import { AddTutorialComponent } from './components/add-tutorial/add-tutorial.com
 import { TutorialDetailsComponent } from './components/tutorial-details/tutorial-details.component';
 import { TutorialsListComponent } from './components/tutorials-list/tutorials-list.component';
 import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {AgGridModule} from 'ag-grid-angular';
 import {EmployeeDetailsComponent} from './components/employee-details/employee-details.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
+import { DropdownDirective } from './shared/dropdown.directive';
+import {AuthComponent} from './auth/auth.component';
+import {LoadingSpinnerComponent} from './loading-spinner/loading-spinner/loading-spinner.component';
+import {AuthInterceptorService} from './auth/auth-interceptor.service';
 // import 'ag-grid-enterprise';
 
 @NgModule({
@@ -22,7 +26,10 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
     TutorialsListComponent,
     HeaderComponent,
     EmployeeDetailsComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    DropdownDirective,
+    AuthComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +39,7 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
     AgGridModule.withComponents([])
 
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })
   export class AppModule { }

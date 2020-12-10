@@ -5,13 +5,25 @@ import { TutorialDetailsComponent } from './components/tutorial-details/tutorial
 import { AddTutorialComponent } from './components/add-tutorial/add-tutorial.component';
 import {EmployeeDetailsComponent} from './components/employee-details/employee-details.component';
 import {EmployeeListComponent} from './components/employee-list/employee-list.component';
+import {AuthGuard} from './auth/auth.guard';
+import {AuthComponent} from './auth/auth.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'tutorials', pathMatch: 'full' },
-  { path: 'tutorials', component: TutorialsListComponent },
-  { path: 'tutorials/:id', component: TutorialDetailsComponent },
-  { path: 'add', component: AddTutorialComponent },
-  { path: 'employees', component: EmployeeListComponent },
+  { path: '', redirectTo: 'tutorials',
+    canActivate: [AuthGuard],
+    pathMatch: 'full' },
+  { path: 'tutorials',
+    canActivate: [AuthGuard],
+    component: TutorialsListComponent },
+  { path: 'tutorials/:id',
+    canActivate: [AuthGuard],
+    component: TutorialDetailsComponent },
+  { path: 'add',
+    component: AddTutorialComponent },
+  { path: 'employees',
+    canActivate: [AuthGuard],
+    component: EmployeeListComponent },
+  { path: 'auth', component: AuthComponent }
 ];
 
 @NgModule({
